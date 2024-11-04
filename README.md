@@ -8,7 +8,6 @@
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
-
         }
         input, button {
             padding: 10px;
@@ -30,10 +29,8 @@
     <input type="number" id="numInput" placeholder="Digite um número" />
     <button onclick="adicionarNumero()">Adicionar número</button>
     <button onclick="calcularResultados()">Calcular</button>
-   
     <h2>Números inseridos:</h2>
     <p id="numerosInseridos"></p>
-   
     <div class="result">
         <p>Soma de todos os números: <span id="soma"></span></p>
         <p>Média aritmética: <span id="media"></span></p>
@@ -41,13 +38,11 @@
         <p>Números ímpares: <span id="impares"></span></p>
     </div>
     </div>
- 
     <script>
         let numeros = [];
         function adicionarNumero() {
             const input = document.getElementById('numInput');
             const valor = parseInt(input.value);
-           
             if (!isNaN(valor)) {
                 numeros.push(valor);
                 document.getElementById('numerosInseridos').textContent = numeros.join(', ');
@@ -63,10 +58,8 @@
             }
             const soma = numeros.reduce((acc, num) => acc + num, 0);
             document.getElementById('soma').textContent = soma;
- 
             const media = soma / numeros.length;
             document.getElementById('media').textContent = media.toFixed(2);
- 
             let pares = 0, impares = 0;
             numeros.forEach(num => {
                 if (num % 2 === 0) {
